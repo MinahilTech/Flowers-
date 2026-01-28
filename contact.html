@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Flora Vista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./Assets/logo.png" alt="Flora Vista Logo">
+                <h1>Flora Vista <span class="subtitle">Flowers Gallery</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 80px 20px;">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Humein batayein hum aapki kaise madad kar sakte hain.</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 40px;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3>Get In Touch</h3>
+                <p>📧 minahilmahi2006@gmail.com</p>
+                <p>📞 +92 331134389</p>
+                <p>📍 Garden Town, Lahore</p>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <form style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" placeholder="Aapka Naam" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+                    <input type="email" placeholder="Email Address" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+                    <textarea placeholder="Aapka Message" rows="5" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required></textarea>
+                    <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flora-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Flora Vista | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
