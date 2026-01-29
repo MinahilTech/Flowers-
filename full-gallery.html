@@ -124,8 +124,8 @@
         .price { color: var(--primary-pink); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 5px; }
 
         footer {
-            background: #333;
-            color: white;
+            background: white;
+            color: black;
             text-align: center;
             padding: 30px;
         }
@@ -136,10 +136,10 @@
     <nav class="navbar">
         <div class="logo"><h1>Flora Vista</h1></div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#" style="color: var(--primary-pink);">Gallery</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" style="color: var(--primary-pink);">Gallery</a></li>
+            <li><a href="/about .html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -168,23 +168,23 @@
 
     <script>
         const flowerData = [
-            { name: "Classic Red", price: "1200", category: "roses", img: "https://images.unsplash.com/photo-1548610762-7c6abc94c031?w=500&auto=format" },
+            { name: "Classic Red", price: "1200", category: "roses", img: "https://images.pexels.com/photos/15239/flower-roses-red-roses-bloom.jpg?auto=compress&cs=tinysrgb&w=500" }, 
             { name: "Wedding Lily", price: "4500", category: "wedding", img: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=500&auto=format" },
             { name: "Birthday Sun", price: "850", category: "birthday", img: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500&auto=format" },
             { name: "White Bridal", price: "5500", category: "wedding", img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500&auto=format" },
-            { name: "Pink Rose", price: "1500", category: "roses", img: "https://images.unsplash.com/photo-1534349762230-e0cadf78f505?w=500&auto=format" },
+            { name: "Pink Rose", price: "1500", category: "roses", img: "https://images.pexels.com/photos/2058498/pexels-photo-2058498.jpeg?auto=compress&cs=tinysrgb&w=500" }, 
             { name: "Party Mix", price: "2000", category: "birthday", img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500&auto=format" },
-            { name: "Royal Tulip", price: "1800", category: "all", img: "https://images.unsplash.com/photo-1520323232427-6b6a4dd0c3dc?w=500&auto=format" },
-            { name: "Lavender Love", price: "900", category: "all", img: "https://images.unsplash.com/photo-1528722828814-77b9b83acf12?w=500&auto=format" },
-            { name: "Graceful Orchid", price: "3500", category: "wedding", img: "https://images.unsplash.com/photo-1533038590840-1cde6b66b721?w=500&auto=format" },
+            { name: "Royal Tulip", price: "1800", category: "all", img: "https://images.pexels.com/photos/1003914/pexels-photo-1003914.jpeg?auto=compress&cs=tinysrgb&w=500" }, 
+            { name: "Lavender Love", price: "900", category: "all", img: "https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=500" }, 
+            { name: "Graceful Orchid", price: "3500", category: "wedding", img: "https://images.pexels.com/photos/1187076/pexels-photo-1187076.jpeg?auto=compress&cs=tinysrgb&w=500" }, 
             { name: "Yellow Daisy", price: "700", category: "birthday", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&auto=format" },
             { name: "Soft Peony", price: "2200", category: "all", img: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=500&auto=format" },
-            { name: "Dark Velvet", price: "1400", category: "roses", img: "https://images.unsplash.com/photo-1550411234-7473e5002c79?w=500&auto=format" },
-            { name: "Spring Bloom", price: "1100", category: "all", img: "https://images.unsplash.com/photo-1464306311932-a74ba89c6bb2?w=500&auto=format" },
-            { name: "Golden Glow", price: "1600", category: "birthday", img: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=500&auto=format" },
+            { name: "Dark Velvet", price: "1400", category: "roses", img: "https://images.pexels.com/photos/1122627/pexels-photo-1122627.jpeg?auto=compress&cs=tinysrgb&w=500" }, 
+            { name: "Spring Bloom", price: "1100", category: "all", img: "https://images.pexels.com/photos/67636/rose-blue-flower-67636.jpeg?auto=compress&cs=tinysrgb&w=500" }, 
+            { name: "Golden Glow", price: "1600", category: "birthday", img: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500&auto=format" },
             { name: "Pearl Bouquet", price: "4000", category: "wedding", img: "https://images.unsplash.com/photo-1507290439931-a861b5a38200?w=500&auto=format" },
             { name: "Wild Spirit", price: "750", category: "all", img: "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=500&auto=format" },
-            { name: "Sweet Rose", price: "1300", category: "roses", img: "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=500&auto=format" }
+            { name: "Sweet Rose", price: "1300", category: "roses", img: "https://images.pexels.com/photos/736230/pexels-photo-736230.jpeg?auto=compress&cs=tinysrgb&w=500" } 
         ];
 
         function displayFlowers(category) {
@@ -209,11 +209,11 @@
         }
 
         function filterGallery(category) {
-            // Update active button
             const btns = document.querySelectorAll('.filter-btn');
             btns.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
             displayFlowers(category);
         }
 
