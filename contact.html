@@ -22,24 +22,32 @@
         </nav>
     </header>
 
-    <main class="container" style="padding: 80px 20px;">
-        <h2 class="section-title">Contact Us</h2>
-        <p class="section-subtitle">Humein batayein hum aapki kaise madad kar sakte hain.</p>
+    <main class="container" style="padding: 60px 20px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title">Humein Rabta Karein</h2>
+            <p>Koi sawal hai? Humse baat karne mein hichkichahat mehsoos na karein.</p>
+        </div>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 40px;">
-            <div style="flex: 1; min-width: 300px;">
-                <h3>Get In Touch</h3>
-                <p>📧 minahilmahi2006@gmail.com</p>
-                <p>📞 +92 331134389</p>
-                <p>📍 Garden Town, Lahore</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            <div class="contact-info" style="background: #fff5f7; padding: 30px; border-radius: 15px;">
+                <h3 style="margin-bottom: 20px;">Hamari Maloomat</h3>
+                <p><strong>Address:</strong> Garden Town, Lahore, Pakistan</p>
+                <p><strong>WhatsApp:</strong> +92 331134389</p>
+                <p><strong>Email:</strong> minahilmahi2006@gmail.com</p>
+                <p><strong>Working Hours:</strong> 9:00 AM - 10:00 PM</p>
             </div>
 
-            <div style="flex: 1; min-width: 300px;">
-                <form style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" placeholder="Aapka Naam" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
-                    <input type="email" placeholder="Email Address" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
-                    <textarea placeholder="Aapka Message" rows="5" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required></textarea>
-                    <button type="submit" class="btn" style="border: none; cursor: pointer;">Send Message</button>
+            <div class="contact-form">
+                <form action="#" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" placeholder="Aapka Naam" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required>
+                    <input type="email" placeholder="Email Address" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required>
+                    <select style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                        <option>General Inquiry</option>
+                        <option>Order Status</option>
+                        <option>Custom Bouquet Request</option>
+                    </select>
+                    <textarea placeholder="Message" rows="5" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;" required></textarea>
+                    <button type="submit" class="btn" style="border: none; cursor: pointer; background: #ff4d6d; color: white; padding: 12px;">Bhejein (Send)</button>
                 </form>
             </div>
         </div>

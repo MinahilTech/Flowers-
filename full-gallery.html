@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Gallery Explore | Flora Vista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #d63384;
+            --dark-grey: #333;
+            --light-grey: #777;
+            --bg-color: #fffafb;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 { color: var(--primary-pink); margin: 0; font-size: 1.5rem; }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--dark-grey); font-weight: 500; }
+
+        /* Hero Section */
+        .gallery-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.pexels.com/photos/931177/pexels-photo-931177.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Filter Tabs */
+        .filter-section {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            margin: 5px;
+            border: 2px solid var(--primary-pink);
+            background: white;
+            color: var(--primary-pink);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-pink);
+            color: white;
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .full-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card Design */
+        .floral-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border: 1px solid #eee;
+        }
+
+        .floral-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(214, 51, 132, 0.2);
+        }
+
+        .img-box {
+            height: 300px;
+            width: 100%;
+            overflow: hidden;
+            background: #f9f9f9;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-info h3 { margin: 5px 0; font-size: 1.1rem; color: var(--dark-grey); }
+        .price { color: var(--primary-pink); font-weight: bold; font-size: 1.2rem; display: block; margin-top: 5px; }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><h1>Flora Vista</h1></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" style="color: var(--primary-pink);">Gallery</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="gallery-hero">
+        <div>
+            <h2 style="font-size: 3rem; margin: 0;">Our Floral Gallery</h2>
+            <p>Har Moukay Ke Liye Behtareen Phool</p>
+        </div>
+    </header>
+
+    <div class="filter-section">
+        <button class="filter-btn active" onclick="filterGallery('all')">All Flowers</button>
+        <button class="filter-btn" onclick="filterGallery('wedding')">Wedding</button>
+        <button class="filter-btn" onclick="filterGallery('birthday')">Birthday</button>
+        <button class="filter-btn" onclick="filterGallery('roses')">Roses</button>
+    </div>
+
+    <main class="gallery-container">
+        <div class="full-grid" id="main-grid">
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Flora Vista | Designed with ❤️</p>
+    </footer>
+
+    <script>
+        const flowerData = [
+            { name: "Classic Red", price: "1200", category: "roses", img: "https://images.unsplash.com/photo-1548610762-7c6abc94c031?w=500&auto=format" },
+            { name: "Wedding Lily", price: "4500", category: "wedding", img: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=500&auto=format" },
+            { name: "Birthday Sun", price: "850", category: "birthday", img: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500&auto=format" },
+            { name: "White Bridal", price: "5500", category: "wedding", img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500&auto=format" },
+            { name: "Pink Rose", price: "1500", category: "roses", img: "https://images.unsplash.com/photo-1534349762230-e0cadf78f505?w=500&auto=format" },
+            { name: "Party Mix", price: "2000", category: "birthday", img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500&auto=format" },
+            { name: "Royal Tulip", price: "1800", category: "all", img: "https://images.unsplash.com/photo-1520323232427-6b6a4dd0c3dc?w=500&auto=format" },
+            { name: "Lavender Love", price: "900", category: "all", img: "https://images.unsplash.com/photo-1528722828814-77b9b83acf12?w=500&auto=format" },
+            { name: "Graceful Orchid", price: "3500", category: "wedding", img: "https://images.unsplash.com/photo-1533038590840-1cde6b66b721?w=500&auto=format" },
+            { name: "Yellow Daisy", price: "700", category: "birthday", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&auto=format" },
+            { name: "Soft Peony", price: "2200", category: "all", img: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=500&auto=format" },
+            { name: "Dark Velvet", price: "1400", category: "roses", img: "https://images.unsplash.com/photo-1550411234-7473e5002c79?w=500&auto=format" },
+            { name: "Spring Bloom", price: "1100", category: "all", img: "https://images.unsplash.com/photo-1464306311932-a74ba89c6bb2?w=500&auto=format" },
+            { name: "Golden Glow", price: "1600", category: "birthday", img: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=500&auto=format" },
+            { name: "Pearl Bouquet", price: "4000", category: "wedding", img: "https://images.unsplash.com/photo-1507290439931-a861b5a38200?w=500&auto=format" },
+            { name: "Wild Spirit", price: "750", category: "all", img: "https://images.unsplash.com/photo-1502136969935-8d8eef54d77b?w=500&auto=format" },
+            { name: "Sweet Rose", price: "1300", category: "roses", img: "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=500&auto=format" }
+        ];
+
+        function displayFlowers(category) {
+            const grid = document.getElementById('main-grid');
+            grid.innerHTML = "";
+            
+            const filtered = category === 'all' ? flowerData : flowerData.filter(f => f.category === category);
+
+            filtered.forEach(flower => {
+                grid.innerHTML += `
+                    <div class="floral-card">
+                        <div class="img-box">
+                            <img src="${flower.img}" alt="${flower.name}">
+                        </div>
+                        <div class="card-info">
+                            <h3>${flower.name}</h3>
+                            <span class="price">Rs. ${flower.price}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterGallery(category) {
+            // Update active button
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            displayFlowers(category);
+        }
+
+        // Initial Load
+        displayFlowers('all');
+    </script>
+</body>
+</html>
